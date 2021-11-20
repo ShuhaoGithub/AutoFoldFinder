@@ -1,0 +1,35 @@
+{
+    "exp_name": "exp_mcmc_xyj",
+    "num_seq": 1000,
+    "len_seq": 50,
+    "background_model_dir": "/root/projects/newFoldDesign/xyj-dev/data/ckpt/background/bkgr2019_05",
+    "trRosetta_model_dir": "/root/projects/newFoldDesign/xyj-dev/data/ckpt/model2019_07",
+    "ref_map_dir":"/root/projects/newFoldDesign/xyj-dev/data/seq_and_pdb/pdbs/ref_pdbs",
+    
+    "rm_aa": "CW",
+    "debug": "True",
+    "max_to_keep": 5,
+
+    "bgmodel_n2d_layers": 36,
+    "bgmodel_n2d_filters": 64,
+    "bgmodel_window2d": 3,
+
+
+    "trRosetta_n2d_layers": 61,
+    "trRosetta_n2d_filters": 64,
+    "trRosetta_window2d" : 3,
+    "trRosetta_wmin" : 0.8,
+    "trRosetta_ns" : 21,
+    "trRosetta_aa_weight": 1.0,
+
+    "optimize_schedule": [0.1, 40000, 2.0, 5000],
+    "optimize_num_save_step": 100,
+
+    "folding_params_file": "../prokit/configs/folding_params.json",
+    "folding_wdir": "/root/projects/newFoldDesign/xyj-dev/data/experiments/folding_exp/temp",
+    "folding_pcut": 0.05,
+    "folding_mode": 2,
+    "folding_steps": 1000,
+    "folding_use_orient": true,
+    "folding_fastrelax": true 
+}

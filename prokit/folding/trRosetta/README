@@ -1,0 +1,48 @@
+*********************************************************************
+*           _        ____                _   _                      *
+*          | |_ _ __|  _ \ ___  ___  ___| |_| |_ __ _               *
+*          | __| '__| |_) / _ \/ __|/ _ \ __| __/ _` |              *
+*          | |_| |  |  _ < (_) \__ \  __/ |_| || (_| |              *
+*           \__|_|  |_| \_\___/|___/\___|\__|\__\__,_|              *
+*                                                                   *
+* J Yang et al, Improved protein structure prediction using         *
+* predicted interresidue orientations, PNAS, 117: 1496-1503 (2020)  *
+* Please email your comments to: yangjy@nankai.edu.cn               *
+*********************************************************************
+
+
+1.How to run trRosetta? 
+Brief introduction for structure prediction by trRosetta
+
+Step 0. Please generate an MSA (in a3m format) for your protein sequence from other softwares, such as HHblits (https://github.com/soedinglab/hh-suite).
+
+Step 1. Using the generated MSA, predict the distance and orientations by running the scripts at: https://github.com/gjoni/trRosetta.
+
+Step 2. Generate structure models from trRosetta (need to install PyRosetta3: http://www.pyrosetta.org/dow/pyrosetta3-download)  
+>> python trRosetta.py T1008.npz T1008.fasta model.pdb
+
+We suggest running step two for multiple times to generate multiple models and select the top models based on the energy scores, 
+which are available at the end of the model's pdb file.
+
+More details about trRosetta can be found from the following paper:
+J Yang et al, Improved protein structure prediction using predicted inter-residue orientations, PNAS (2020).
+
+
+2. How to convert the distance distribution in the npz file into distance and contact maps?
+For convienience, a script is included in the package for this purpose:
+>> python npz_2_dist.py seq.npz seq 
+
+
+3. How to estimate the accuracy of the predicted models?
+ Fig. S3B of the trRosetta paper shows that the model's TM-score correlates well with the probility of the predicted top contacts.
+ Thus, you can roughly estimate the quality based on the average probablity of the top L predicted long+medium range contacts (|i-j|>12). 
+ A script 'top_prob.py' was provided in the package to calculate this probability.
+ 
+4. How to calculate and visualize the interresidue geometries (distance and orientation) from the input of a PDB structure?
+ A script 'pdb2npz.py' was inlucded in the package to calculate and visualize the interresidue geometries in a PDB structure.
+
+
+Please contact Jianyi (yangjy@nankai.edu.cn) if you have any comments or problems.
+
+Jianyi Yang
+2020.10
