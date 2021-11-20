@@ -1,0 +1,10 @@
+exp1-final_seq_0_model mTM014441
+exp1-final_seq_1_model mTM014442
+exp1-final_seq_2_model mTM014443
+exp1-final_seq_3_model mTM014444
+exp1-final_seq_4_model mTM014445
+exp1-final_seq_5_model mTM014446
+exp1-final_seq_6_model mTM014447
+exp1-final_seq_7_model mTM014448
+exp1-final_seq_8_model mTM014449
+exp1-final_seq_9_model mTM014450
